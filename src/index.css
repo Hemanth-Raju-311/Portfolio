@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: "Caveat", cursive;
+
+  --color-pastel-pink: #ffc4d9;
+  --color-pastel-blue: #c4e0ff;
+  --color-pastel-yellow: #fff3c4;
+  --color-pastel-green: #c4ffce;
+  --color-pastel-purple: #e0c4ff;
+}
+
+@layer utilities {
+  .shadow-doodle {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  .shadow-doodle-lg {
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  .br-doodle {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  .br-doodle-alt {
+    border-radius: 15px 255px 15px 225px/225px 15px 255px 15px;
+  }
+}
