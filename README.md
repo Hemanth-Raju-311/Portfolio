@@ -1,6 +1,6 @@
 # Hemanth Raju - Portfolio
 
-A creative, interactive, and playful portfolio showcasing my work as an AI & ML Engineer. Built with React, Vite, Tailwind CSS, and Framer Motion.
+A growing collection of things I’ve made and messed around with, showcasing my work as an AI & ML Engineer. Built with React, Vite, Tailwind CSS, and Framer Motion.
 
 ## Features
 
