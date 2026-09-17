@@ -129,11 +129,11 @@ const SectionHeading = ({ children, icon: Icon }: SectionHeadingProps) => (
     className="flex items-center gap-4 mb-12 relative z-10"
   >
     {Icon && (
-      <div className="w-12 h-12 rounded-full bg-pastel-pink border-4 border-black flex items-center justify-center shadow-doodle">
+      <div className="w-12 h-12 shrink-0 rounded-full bg-pastel-pink border-4 border-black flex items-center justify-center shadow-doodle">
         <Icon className="w-6 h-6 stroke-2" />
       </div>
     )}
-    <h2 className="text-4xl font-display font-bold relative inline-block group">
+    <h2 className="text-3xl sm:text-4xl min-w-0 font-display font-bold relative inline-block group">
       <span className="relative z-10">{children}</span>
       <div className="absolute bottom-1 left-0 right-0 h-3 bg-pastel-yellow -z-10 -rotate-1 group-hover:rotate-1 group-hover:h-4 group-hover:bg-pastel-blue transition-all duration-300"></div>
     </h2>
@@ -398,14 +398,41 @@ export default function App() {
             className="space-y-8"
           >
             <motion.div variants={fadeInUp} className="group">
+              <DoodleCard bgColor="bg-pastel-blue">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                  <div>
+                    <h3 className="text-2xl font-display font-bold">LLM Evaluator</h3>
+                    <p className="font-handwriting text-gray-600 text-2xl mt-1">DataAnnotation Tech (Freelance/Contract) · Remote</p>
+                  </div>
+                  <div className="px-4 py-2 bg-white border-2 border-black br-doodle font-bold text-sm text-center shrink-0">
+                    May 2026 – Present
+                  </div>
+                </div>
+                <ul className="space-y-4 text-lg">
+                  <li className="flex gap-4 items-start">
+                    <span className="text-pastel-yellow mt-1"><Star fill="currentColor" className="w-5 h-5 stroke-black stroke-2" /></span>
+                    <span>Engineered <strong>adversarial coding prompts</strong> to benchmark frontier LLMs and uncover failures in reasoning, instruction following, debugging, algorithm design, and edge-case handling.</span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <span className="text-pastel-yellow mt-1"><Star fill="currentColor" className="w-5 h-5 stroke-black stroke-2" /></span>
+                    <span>Evaluated and ranked responses across foundation models for correctness, efficiency, code quality, and logical consistency, with detailed evaluation rationales.</span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <span className="text-pastel-yellow mt-1"><Star fill="currentColor" className="w-5 h-5 stroke-black stroke-2" /></span>
+                    <span>Contributed to frontier AI training through prompt engineering, comparative analysis, quality assurance, error analysis, and model alignment.</span>
+                  </li>
+                </ul>
+              </DoodleCard>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="group">
               <DoodleCard bgColor="bg-pastel-yellow">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                   <div>
                     <h3 className="text-2xl font-display font-bold">AI Model Trainer / LLM Evaluator</h3>
-                    <p className="text-lg font-handwriting text-gray-600 text-2xl mt-1">Outlier AI (Freelance/Contract)</p>
+                    <p className="font-handwriting text-gray-600 text-2xl mt-1">Outlier AI (Freelance/Contract) · Remote</p>
                   </div>
                   <div className="px-4 py-2 bg-white border-2 border-black br-doodle font-bold text-sm text-center">
-                    Sept 2025 – Present
+                    Sept 2025 – April 2026
                   </div>
                 </div>
                 <ul className="space-y-4 text-lg">
@@ -420,6 +447,32 @@ export default function App() {
                 </ul>
               </DoodleCard>
             </motion.div>
+          </motion.div>
+        </section>
+
+        {/* Achievements Section */}
+        <section className="py-24" id="achievements">
+          <SectionHeading icon={Award}>Achievements</SectionHeading>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="group">
+            <DoodleCard bgColor="bg-pastel-purple">
+              <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-6">
+                <div>
+                  <p className="font-handwriting text-2xl text-gray-700 mb-2">A little silver, a lot of optimization.</p>
+                  <h3 className="text-3xl font-display font-bold">Kaggle NeuroGolf 2026</h3>
+                </div>
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-black br-doodle font-bold shrink-0">
+                  <Award className="w-6 h-6" /> Silver Medal
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-4 mb-6">
+                <span className="px-4 py-2 bg-pastel-yellow border-2 border-black br-doodle-alt font-bold">Top 2.53%</span>
+                <span className="px-4 py-2 bg-white border-2 border-black br-doodle font-bold">75 / 2,963 teams</span>
+              </div>
+              <p className="text-lg mb-6 max-w-3xl">Optimized ONNX graphs, eliminated redundant computation, and reduced inference cost while preserving correctness.</p>
+              <a href="https://www.kaggle.com/certification/competitions/hemanthraju311/neurogolf-2026" target="_blank" rel="noopener noreferrer" onMouseEnter={() => playSound('boop')} onClick={() => playSound('click')} className="inline-flex px-4 py-2 bg-white border-2 border-black br-doodle font-bold items-center gap-2 hover:bg-gray-100 transition-colors">
+                View Certificate <ExternalLink className="w-4 h-4" />
+              </a>
+            </DoodleCard>
           </motion.div>
         </section>
 
@@ -591,11 +644,11 @@ export default function App() {
               <motion.div variants={slideInRight} className="group">
                 <DoodleCard bgColor="bg-pastel-blue">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-display font-bold pr-4">Vellore Institute of Technology (VIT)</h3>
+                    <h3 className="text-xl font-display font-bold pr-4">Vellore Institute of Technology (VIT), Chennai</h3>
                   </div>
                   <p className="font-bold border-b-2 border-black pb-2 mb-2 inline-block">B.Tech CSE (AI & ML Specialization)</p>
                   <div className="flex justify-between font-handwriting text-xl">
-                    <span>Sept 2022 – Present</span>
+                    <span>Sept 2022 – 2026</span>
                     <span className="font-bold text-2xl">CGPA: 8.82</span>
                   </div>
                 </DoodleCard>
